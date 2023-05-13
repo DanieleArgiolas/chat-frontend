@@ -1,0 +1,15 @@
+<div class="d-flex h-100">
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Message</mat-label>
+    <textarea
+      matInput
+      placeholder="Type your message"
+      [(ngModel)]="message"
+    ></textarea>
+  </mat-form-field>
+  <div class="d-flex flex-column justify-content-center h-100">
+    <button mat-raised-button color="primary" (click)="sendMessage()">
+      Send
+    </button>
+  </div>
+</div>

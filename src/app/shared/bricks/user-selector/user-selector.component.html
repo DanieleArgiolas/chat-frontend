@@ -1,0 +1,3 @@
+<mat-card (click) = "select()"  [ngClass]="{'selected' : selected$ | async}">
+  <mat-card-content>{{user.customID}}</mat-card-content>
+</mat-card>

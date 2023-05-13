@@ -1,0 +1,25 @@
+<div class="d-flex flex-column h-100">
+
+  <app-header></app-header>
+
+  <div  style="flex: 1">
+    <div class="row h-100">
+      <div class="col-md-4">
+        <ng-container *ngFor="let user of sockets$ | async; let first = first">
+          <div class="mb-1" [ngClass]="{'mt-1': first}">
+            <app-user-selector [user]="user"></app-user-selector>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="col-md-8">
+        <div class="d-flex flex-column justif-content-between h-100">
+          <div style="flex: 1">la</div>
+          <div>
+            <app-chat-input class="w-100"></app-chat-input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
