@@ -6,6 +6,8 @@ import { MaterialModule } from '../shared/material.module';
 import {  CustomInputsModule } from '../shared/custom-form/custom-inputs.module';
 import { BricksModule } from '../shared/bricks/bricks.module';
 
+import { LoginComponent } from './login/login.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -16,13 +18,16 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ChatComponent
+    ChatComponent,
+
+    LoginComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     CustomInputsModule,
-    BricksModule
+    BricksModule,
+    MaterialModule
 
   ]
 })

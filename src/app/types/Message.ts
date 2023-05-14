@@ -15,4 +15,5 @@ export interface Message{
   text: string;
   from: SocketClient['customID'];
   to: SocketClient['customID'];
+  self: boolean;
 }

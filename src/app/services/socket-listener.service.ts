@@ -41,6 +41,9 @@ export class SocketListenerService {
 
         const messages = this._all_messages.getValue();
 
+
+
+
         this._all_messages.next([...messages, incomingMessage])
 
         // this._all_sockets.next(this._all_sockets.getValue().filter(x => x.customID != left.customID))

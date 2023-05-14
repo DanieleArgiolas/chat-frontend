@@ -11,6 +11,11 @@ export class UserService {
 
   _user = new BehaviorSubject<SocketClient|null>(null);
 
+
+  getUserValue(): SocketClient|null{
+    return this._user.getValue();
+  }
+
   getUser$(): Observable<SocketClient|null>{
     return this._user.asObservable();
   }

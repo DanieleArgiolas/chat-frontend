@@ -1,0 +1,11 @@
+<div
+  class="d-flex"
+  [ngClass]="{'justify-content-end' : message.self, 'justify-content-start' : !message.self,}"
+>
+  <div
+    class="speech-bubble-right"
+    [ngClass]="{'speech-bubble-right' : message.self, 'speech-bubble-left' : !message.self,}"
+  >
+    {{ message.text }}
+  </div>
+</div>

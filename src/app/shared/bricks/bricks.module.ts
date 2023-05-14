@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { UserSelectorComponent } from './user-selector/user-selector.component';
 import { MaterialModule } from '../material.module';
 import { HeaderComponent } from './header/header.component';
+import { MessageBubbleComponent } from './message-bubble/message-bubble.component';
 
 
 
 @NgModule({
   declarations: [
     UserSelectorComponent,
-    HeaderComponent
+    HeaderComponent,
+    MessageBubbleComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     UserSelectorComponent,
-    HeaderComponent
+    HeaderComponent,
+    MessageBubbleComponent
   ]
 })
 export class BricksModule { }

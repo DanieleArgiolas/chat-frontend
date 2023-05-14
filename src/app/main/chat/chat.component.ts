@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { CurrentChatService } from 'src/app/services/current-chat.service';
 import { SocketListenerService } from 'src/app/services/socket-listener.service';
 import { SocketService } from 'src/app/services/socket.service';
+import { Message } from 'src/app/types/Message';
 
 @Component({
   selector: 'app-chat',
@@ -12,22 +14,14 @@ export class ChatComponent {
 
   sockets$: Observable<Array<{ customID: string }>>
 
-  constructor(private listener: SocketListenerService) {
-    this.sockets$ = listener.all_sockets$
-  }
+  messages$: Observable<Array<Message>>
+  inChat$: Observable<boolean>
 
+  constructor(private listener: SocketListenerService, private currentChatService: CurrentChatService) {
+    this.sockets$ = listener.all_sockets$
+    this.messages$ = currentChatService.getMessages$()
+    this.inChat$ = currentChatService.inChat$
+  }
 }
 
 
-// // 
-// ngOnInit(): void {
-//   // listen to 'chat message' event from the server
-//   this.socketService.listen('chat message').subscribe((message: string) => {
-//     this.messages.push(message);
-//   });
-// }
-
-// sendMessage(): void {
-//   // emit 'chat message' event to the server
-//   this.socketService.emit('chat message', 'Hello from Angular!');
-// }

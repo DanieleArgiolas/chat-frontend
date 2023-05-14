@@ -1,0 +1,49 @@
+/* Define the mixin */
+@mixin speech-bubble-options {
+  position: relative;
+
+  border-radius: .4em;
+  min-height: 5rem;
+  width: 90%;
+}
+
+/* Define the speech bubble classes */
+.speech-bubble {
+  &-left {
+    @include speech-bubble-options;
+    $bg: #99ef96;
+    background: $bg;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 19px solid transparent;
+      border-right-color: $bg;
+      border-left: 0;
+      margin-top: -19px;
+      margin-left: -19px;
+
+    }
+  }
+  &-right {
+    @include speech-bubble-options;
+    $bg: #00aabb;
+    background: $bg;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 19px solid transparent;
+      border-left-color: $bg;
+      border-right: 0;
+      margin-top: -19px;
+      margin-right: -19px;
+    }
+  }
+}

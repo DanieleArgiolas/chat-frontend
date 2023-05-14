@@ -23,7 +23,11 @@ export class ChatInputComponent {
 
     this.selectedClientService.getClient$().pipe(first()).subscribe(
       (client: SocketClient | null) => {
-        if(!client) return;
+        if(!client){
+          console.log('no client selected!');
+
+          return;
+        }
         this.socketEmiterService.sendMessage(client.customID, this.message)
         // reset
         this.message = '';
