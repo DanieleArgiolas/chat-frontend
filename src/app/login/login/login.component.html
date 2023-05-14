@@ -1,0 +1,24 @@
+
+
+<div class="card shadow login-mask "  [formGroup]="form">
+  <div class="card-header bg-white">
+    Login
+  </div>
+  <div class="card-body">
+    <div>
+      <mat-form-field class="w-100">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username"  />
+      </mat-form-field>
+    </div>
+    <!-- <div>
+      <mat-form-field class="w-100">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" />
+      </mat-form-field>
+    </div> -->
+    <div>
+      <button mat-raised-button color="primary" (click)="onSubmit()">START</button>
+    </div>
+  </div>
+</div>

@@ -10,8 +10,6 @@ import { environment } from 'src/environments/environment';
 export class SocketService {
   private socket: Socket;
   constructor() {
-    console.log('called');
-    
     this.socket = io(environment.socketEndpoint);
   }
 

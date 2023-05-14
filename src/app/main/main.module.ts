@@ -6,7 +6,7 @@ import { MaterialModule } from '../shared/material.module';
 import {  CustomInputsModule } from '../shared/custom-form/custom-inputs.module';
 import { BricksModule } from '../shared/bricks/bricks.module';
 
-import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   declarations: [
     ChatComponent,
 
-    LoginComponent
+
   ],
   imports: [
     CommonModule,
